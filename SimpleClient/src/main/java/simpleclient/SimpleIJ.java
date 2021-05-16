@@ -40,9 +40,11 @@ import simpledb.jdbc.network.NetworkDriver;
  * executes that statement. If the statement is a query, then the output table
  * is displayed. If the statement is an update command, then the number of
  * affected records is printed. If the statement is ill-formed, then an error
- * message will be printed. SimpleDB understands a very limited subset of SQL,
- * and SimpleIJ will throw an exception if given an SQL statement that the
- * engine does not understand. <br/><br/>
+ * message will be printed. <br/><br/>
+ *
+ * @implNote SimpleDB understands a very limited subset of SQL, and SimpleIJ
+ * will throw an exception if given an SQL statement that the engine does not
+ * understand.
  */
 public class SimpleIJ {
     public static void main(String[] args) {
