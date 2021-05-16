@@ -4,6 +4,11 @@ import java.rmi.registry.*;
 
 import simpledb.jdbc.network.*;
 
+/**
+ * The SimpleDB server accepts client connections from anywhere, corresponding
+ * to Derby’s “-h 0.0.0.0” command-line option. The only way to shut down the
+ * server is to kill its process from the console window.
+ */
 public class StartServer {
    public static void main(String args[]) throws Exception {
       // configure and initialize the database
