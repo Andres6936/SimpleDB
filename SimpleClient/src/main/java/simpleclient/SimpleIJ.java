@@ -20,6 +20,28 @@ import simpledb.jdbc.network.NetworkDriver;
  *       <li>jdbc:simpledb://cs.bc.edu</li>
  *    </ul>
  * </code>
+ *
+ * The first connection string specifies an embedded connection to the “testij”
+ * database. Like Derby, the database will be located in the directory of the
+ * executing program, which is the SimpleDB Clients project. Unlike Derby,
+ * SimpleDB will create the database if it does not exist, so there is no need
+ * for an explicit “create ¼ true” flag.
+ *
+ * The second and third connection strings specify a server-based connection to
+ * a SimpleDB server running on the local machine or on cs.bc.edu. Unlike
+ * Derby, the connection string does not specify a database. The reason is that
+ * the SimpleDB engine can handle only one database at a time, which is
+ * specified when the server is started.
+ *
+ * SimpleIJ repeatedly prints a prompt asking you to enter a single line of
+ * text containing an SQL statement. Unlike Derby, the line must contain the
+ * entire statement, and no semicolon is needed at the end. The program then
+ * executes that statement. If the statement is a query, then the output table
+ * is displayed. If the statement is an update command, then the number of
+ * affected records is printed. If the statement is ill-formed, then an error
+ * message will be printed. SimpleDB understands a very limited subset of SQL,
+ * and SimpleIJ will throw an exception if given an SQL statement that the
+ * engine does not understand.
  */
 public class SimpleIJ {
     public static void main(String[] args) {
