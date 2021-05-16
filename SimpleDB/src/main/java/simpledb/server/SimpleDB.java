@@ -12,7 +12,34 @@ import simpledb.index.planner.IndexUpdatePlanner;
 import simpledb.opt.HeuristicQueryPlanner;
 
 /**
- * The class that configures the system.
+ * The class that configures the system. <br/><br/>
+ * <p>
+ * A query in SimpleDB consists only of select-from-where clauses in which the
+ * select clause contains a list of field names (without the AS keyword), and
+ * the from clause contains a list of table names (without range variables).
+ * The terms in the optional where clause can be connected only by the boolean
+ * operator and. Terms can only compare constants and field names for equality.
+ * <br/><br/>
+ * <p>
+ * Unlike standard SQL, there are no other comparison operators, no other
+ * boolean operators, no arithmetic operators or built-in functions, and no
+ * parentheses. Consequently, nested queries, aggregation, and computed values
+ * are not supported. <br/><br/>
+ * <p>
+ * Because there are no range variables and no renaming, all field names in a
+ * query must be disjoint. And because there are no group by or order by
+ * clauses, grouping and sorting are not supported. Other restrictions are:
+ * <br/><br/>
+ *
+ * <ul>
+ *     <li>The “*” abbreviation in the select clause is not supported.</li>
+ *     <li>There are no null values.</li>
+ *     <li>There are no explicit joins or outer joins in the from clause.</li>
+ *     <li>The union keyword is not supported.</li>
+ *     <li>An insert statement takes explicit values only. That is, an insertion
+ *     cannot be specified by a query.</li>
+ *     <li>An update statement can have only one assignment in the set clause.</li>
+ * </ul>
  *
  * @author Edward Sciore
  */
