@@ -6,6 +6,21 @@ import java.util.Scanner;
 import simpledb.jdbc.embedded.EmbeddedDriver;
 import simpledb.jdbc.network.NetworkDriver;
 
+/**
+ * SimpleIJ, is a simplified version of the Derby ij program. One difference
+ * from ij is that you can only connect once, at the beginning of the session.
+ * When you execute the program, it asks you for a connection string. The
+ * syntax of the connection string is similar to that in ij. For example,
+ * consider the following SimpleDB connection strings: <br/><br/>
+ *
+ * <code>
+ *    <ul>
+ *       <li>jdbc:simpledb:testij</li>
+ *       <li>jdbc:simpledb://localhost</li>
+ *       <li>jdbc:simpledb://cs.bc.edu</li>
+ *    </ul>
+ * </code>
+ */
 public class SimpleIJ {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
